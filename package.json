@@ -3,9 +3,10 @@
   "description": "TODO",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev",
+    "dev:mainpage": "MYAPP_BUILD_VERSION=mainpage sapper dev",
+    "dev:subpage": "MYAPP_BUILD_VERSION=subpage sapper dev",
     "build": "sapper build --legacy",
-    "export:mainpage": "sapper export --static static/main-page",
+    "export:mainpage": "MYAPP_BUILD_VERSION=mainpage sapper export --static static/main-page",
     "export:subpage": "MYAPP_BUILD_VERSION=subpage sapper export --basepath subpage --static static/sub-page --routes src/routes-subpage",
     "export": "npm run export:mainpage && npm run export:subpage",
     "start": "node __sapper__/build"

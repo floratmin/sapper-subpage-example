@@ -20,7 +20,8 @@ const onwarn = (warning, onwarn) =>
 
 export default {
 	client: {
-		input: config.client.input(),
+		// TODO: changing the input file to something different than client.js breaks the building process alltogether.
+		input: config.client.input(), // .replace(/\.js/, `${buildVersion}.js`),
 		output: config.client.output(),
 		plugins: [
 			replace({
